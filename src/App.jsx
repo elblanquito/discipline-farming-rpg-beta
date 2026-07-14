@@ -2,36 +2,34 @@ import { useState } from "react";
 import "./App.css";
 import { SkillCard } from "./components/SkillCard.jsx";
 
-
-
-
 function App() {
-  const [skills, setSkill] = useState([{
-    name: "Disciplina 2",
-    description:
-      "Descripción de la disciplina, podria ser mitivaciones que lo empujan a realizarlo dia tras dia",
-    level: 5,
-    difficulty: "Media",
-  }]);
+  const [skills, setSkill] = useState([
+    {
+      name: "Disciplina 1",
+      color: "naranja",
+      description:
+        "Descripción de la disciplina, podria ser mitivaciones que lo empujan a realizarlo dia tras dia",
+      level: 5,
+      difficulty: "Media",
+    },
+    {
+      name: "Disciplina 2",
+      color: "defecto",
+      description:
+        "Descripción de la disciplina, podria ser mitivaciones que lo empujan a realizarlo dia tras dia",
+      level: 5,
+      difficulty: "Media",
+    },
+  ]);
 
-  
   return (
     <>
-      <section>
-        <SkillCard skill = {skills[0]}/>
+      <h1>Discipline Farming RPG</h1>
+      <section className="skills-container">
+        <SkillCard skill={skills[0]} />
+        <SkillCard skill={skills[1]} />
+        <SkillCard skill={skills[1]} />
       </section>
-      <article className="skill-card">
-        <header>
-          <h2>Carta de disiplina</h2>
-        </header>
-        <p>
-          Descripción de la disciplina, podria ser mitivaciones que lo empujan a
-          realizarlo dia tras dia
-        </p>
-        <p>Nivel: 5</p>
-        <p>Dificultad: Media</p>
-        <footer></footer>
-      </article>
     </>
   );
 }
